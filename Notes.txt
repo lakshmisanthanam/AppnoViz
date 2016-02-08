@@ -1,0 +1,20 @@
+1. Create new project.
+2. Run php artisan make:auth
+3. Update database details in .env file.
+4. Run php artisan migrate to create the database tables.
+
+Fixing Form and HTML Service Provider dependencies.
+===================================================
+1. Add "illuminate/html": "5.1.*" to composer.json
+2. Run "composer update" from command line.
+3. Add below lines to app.php
+Under Providers:
+		Illuminate\Html\HtmlServiceProvider::class,
+Under Aliases:
+
+        'Html'      => Illuminate\Html\HtmlFacade::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
+
+In Laravel 5.2, HTMLServiceProvider bindShared method has been renamed to singleton(). So those method names should be renamed.
+
+NOTE: Add similar aliases if other classes are not found.
