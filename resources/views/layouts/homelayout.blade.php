@@ -7,7 +7,7 @@
 
     <title>AppnoViz - VISA</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/home.css"/>
 </head>
 <body id="app-layout">
 
@@ -22,7 +22,7 @@
         </div>
     </header>
     <div class="wrapper">
-      <div class="container">
+      <div class="container-home">
               @yield('content')
       </div>
     </div>

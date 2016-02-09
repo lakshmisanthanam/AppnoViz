@@ -1,17 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.homelayout')
+
+@section('loggedIn')
+    <div class="loggedin">
+        @if (Auth::check()) 
+            Hi, {{ Auth::user()->name }} <a href="{{ url('/logout') }}">Logout</a>
+        @else
+            <a href="{{ url('/login') }}">Login</a>
+        @endif
+    </div>
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+You are logged In!
 @endsection
